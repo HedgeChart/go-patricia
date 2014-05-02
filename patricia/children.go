@@ -7,9 +7,9 @@ package patricia
 
 const (
 	// Max prefix length that is kept in a single trie node.
-	MaxPrefixPerNode = 100
+	MaxPrefixPerNode = 10
 	// Max children to keep in a node in the sparse mode.
-	MaxChildrenPerSparseNode = 256
+	MaxChildrenPerSparseNode = 30
 )
 
 type childList interface {
