@@ -65,8 +65,8 @@ func (trie *Trie) Set(key Prefix, item Item) {
 // nil interface as a valid value, even using zero value of any type is enough
 // to prevent this bad behaviour.
 func (trie *Trie) Get(key Prefix) (item Item) {
-	_, node, _, leftover := trie.findSubtree(key)
-	if len(leftover) != 0 {
+	_, node, found, leftover := trie.findSubtree(key)
+	if !found || len(leftover) != 0 {
 		return nil
 	}
 	return node.item
