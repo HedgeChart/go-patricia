@@ -75,7 +75,7 @@ func (list *sparseChildList) remove(child *Trie) {
 
 func (list *sparseChildList) next(b byte) *Trie {
 	for _, child := range list.children {
-		if child.prefix[0] == b {
+		if len(child.prefix) > 0 && child.prefix[0] == b {
 			return child
 		}
 	}
